@@ -1,4 +1,4 @@
-package java_work;
+package java_work1;
 
 public class ComputeExpression {
 
