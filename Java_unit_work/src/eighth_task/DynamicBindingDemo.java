@@ -24,7 +24,7 @@ public class DynamicBindingDemo {
     	@Override
     	public String toString()
     	{
-    		return "Student";
+    		return "Students";
     	}
     }
     
