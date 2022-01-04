@@ -1,6 +1,6 @@
 package LoginModule;
 
-public class User
+public class User   //”√ªß¿‡
 {
 	private String ID;
 	private String password;
@@ -10,7 +10,7 @@ public class User
     	
     };
     
-    public User(String ID, String password) {
+    public User(String ID, String password) {  
     	this.ID = ID;
     	this.password = password;
     }

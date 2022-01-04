@@ -5,36 +5,30 @@ import java.util.Scanner;
 
 
 public class AnsweringPage extends Page {
-
+/*
+ * 执行答题页面功能
+ */
 	@Override
 	public Page execute() {
-		// TODO Auto-generated method stub
-		// 1.导入并解析文件
+		//找到题库文件的路径
 		File file = new File("data/Question","Question.txt");
-		int cnt = 0;
+		int cnt = 0;  //用来积分
 		String line = null;
-		boolean ifContinue = true;
+		boolean ifContinue = true; //用来判断是否继续答题
 		try (BufferedReader r = new BufferedReader(new FileReader(file));) {
 			while (ifContinue) 
 			{
-				while (!(line = r.readLine()).equals("***"))
+				while (!(line = r.readLine()).equals("***")) 
 				{
-	//				// 2.封装成一个Question对象
-	//				Question question = new Question();
-	//				question.description = line;
-					// 3.展示给用户
-					System.out.println(line);
+
+					System.out.println(line);  //讲题展示给用户，“***”为分界符
 				}
-				/*
-				 * 如果读到***，就是答案
-				 * 4.读取用户答案，并校对
-				 */
-				line = r.readLine();
+				line = r.readLine(); //line现在为答案
 				System.out.println("请输入您的答案：(若选择题请，输入大写字母)");
 				Scanner in = new Scanner(System.in);
-				String userAnswer = in.nextLine();
+				String userAnswer = in.nextLine(); //用户输入答案
 				if (line.equals(userAnswer)) {
-					System.out.println("回答正确");
+					System.out.println("回答正确"); //用户输入的答案和line相同，加分
 					cnt++;
 				} else {
 					System.out.println("回答错误，正确答案是"+ line);
@@ -48,7 +42,6 @@ public class AnsweringPage extends Page {
 				if(choice==1)
 				{
 					ifContinue=true;
-					cnt++;
 				}
 				else
 					ifContinue=false;
@@ -66,12 +59,12 @@ public class AnsweringPage extends Page {
 		System.out.println("1 返回主页面");
 		System.out.println("2 退出");
 		Scanner sc=new Scanner(System.in);
-		int choice2=sc.nextInt();
-		if(choice2==1)
-			return new MainPage();
+		String choice2=sc.next();
+		if(choice2=="1")
+			return new MainPage();  //返回主页面
 
 		else
-			return null;
+			return null;  //退出
 	}
 
 }

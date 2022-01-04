@@ -11,6 +11,9 @@ import beans.Page;
 
 public class StoryPage extends Page 
 {
+	/*
+	 * 执行故事页面的功能
+	 */
 	public Page execute() 
 	{
 		System.out.println("-----------Story-----------");
@@ -24,7 +27,7 @@ public class StoryPage extends Page
 		System.out.println("8 醉翁之意不在酒");
 
 		Scanner sc = new Scanner(System.in);
-		String choice_3= sc.nextLine();
+		String choice_3= sc.nextLine(); //用户输入编号查看相应的故事
 		
 		switch (choice_3)
 		{
@@ -165,16 +168,17 @@ public class StoryPage extends Page
 			}
 			
 		}
+		//选择下一步要干什么
 		Scanner sc1=new Scanner(System.in);
 		System.out.println("1 返回主页面");
 		System.out.println("2 返回故事目录");
 		System.out.println("3 退出");
 		int choice2=sc1.nextInt();
-		if(choice2==1)
-			return new MainPage();
+		if(choice2==1) 
+			return new MainPage();  //返回主页面
 
 		else if(choice2==2)
-			return new StoryPage();
-		else return null;
+			return new StoryPage(); //返回故事页面
+		else return null;  //退出
 	}
 }

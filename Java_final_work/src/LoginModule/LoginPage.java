@@ -39,7 +39,7 @@ public class LoginPage extends Page
 				{
 					user = UserManager.getUser(username); // 把页面的用户设置为指定用户
 					System.out.println("登录成功！");
-					return new MainPage();
+					return new MainPage(); //进入主页面
 				}
 					
 				else 

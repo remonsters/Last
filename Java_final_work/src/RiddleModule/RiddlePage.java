@@ -10,9 +10,11 @@ import beans.MainPage;
 import beans.Page;
 
 public class RiddlePage extends Page {
+	/*
+	 * 执行猜谜页面功能
+	 */
 	public Page execute() {
-		// TODO Auto-generated method stub
-		// 1.导入并解析文件
+		//找到猜谜谜题的文件路径
 		File file = new File("data/Riddle","Riddle.txt");
 		String line = null;
 		boolean ifContinue = true;
@@ -21,16 +23,11 @@ public class RiddlePage extends Page {
 			{
 				while (!(line = r.readLine()).equals("***"))
 				{
-	//				// 2.封装成一个Question对象
-	//				Question question = new Question();
-	//				question.description = line;
-					// 3.展示给用户
+	//				/
 					System.out.println(line);
 				}
-				/*
-				 * 如果读到***，就是答案
-				 * 4.读取用户答案，并校对
-				 */
+				
+				
 				line = r.readLine();
 				System.out.println("请输入您的答案：");
 				Scanner in = new Scanner(System.in);
@@ -64,10 +61,10 @@ public class RiddlePage extends Page {
 		Scanner sc=new Scanner(System.in);
 		int choice2=sc.nextInt();
 		if(choice2==1)
-			return new MainPage();
+			return new MainPage();  //返回主页面
 
 		else
-			return null;
-	}
+			return null;  //退出
+	} 
 
 }

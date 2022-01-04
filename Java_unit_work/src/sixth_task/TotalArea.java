@@ -4,7 +4,7 @@ public class TotalArea {
 
 	public static void main(String[] args)
 	{
-		Circle[] circleArray;
+		Circle_[] circleArray;
 		
 		circleArray = createCircleArray();
 		
@@ -12,20 +12,20 @@ public class TotalArea {
          
 	}
 
-	private static Circle[] createCircleArray() 
+	private static Circle_[] createCircleArray() 
 	{
-	      Circle[] circleArray = new Circle[5];
+	      Circle_[] circleArray = new Circle_[5];
 	      
 	      for(int i = 0;i < circleArray.length;i++ )
 	      {
-	    	  circleArray[1] = new Circle(Math.random() * 100);
+	    	  circleArray[1] = new Circle_();
 	      }
 	      
 	      return circleArray;
 	
 	}
 	
-	public static void printCircleArray(Circle[] circleArray)
+	public static void printCircleArray(Circle_[] circleArray)
 	{
 	    System.out.printf("%-30%-15sf\n","Radius","Area");
 		for(int i = 0;i< circleArray.length;i++)
@@ -39,7 +39,7 @@ public class TotalArea {
 		}
 	}
 	
-	public static double sum(Circle[] circleArray)
+	public static double sum(Circle_[] circleArray)
 	{
 		double sum=0;
 		

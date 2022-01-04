@@ -8,7 +8,10 @@ import RiddleModule.RiddlePage;
 import StoryModule.StoryPage;
 
 public class MainPage extends Page {
-
+	/*
+	 * 主页面
+	 * 
+	 */
 	@Override
 	public Page execute() {
 		Scanner sc = new Scanner(System.in);
@@ -21,13 +24,13 @@ public class MainPage extends Page {
 		String choice_2 = sc.nextLine();
 		switch (choice_2) {
 		case "1":
-			return new AnsweringPage();
+			return new AnsweringPage();  //进入答题页面
 		case "2":
-			return new StoryPage();
+			return new StoryPage();   //进入故事页面
 		case "3":
-			return new RiddlePage();
+			return new RiddlePage(); //进入猜谜页面
 		case "4":
-			return null;
+			return null;  //退出
 		}
 		return null;
 	}
